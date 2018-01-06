@@ -547,7 +547,7 @@ def bot(op):
 		if op.param2 in Creator:
 		    ki.acceptGroupInvitation(op.param1)
  
-           if op.param3 in mid:
+            if op.param3 in mid:
 		if op.param2 in Amid:
 		    cl.acceptGroupInvitation(op.param1)
 		
