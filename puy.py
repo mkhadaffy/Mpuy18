@@ -263,7 +263,7 @@ settings = {
 cctv = {
     "cyduk":{},
     "point":{},
-    "sidermem":True,
+    "sidermem":{},
 }    
 
 wait2 = {
