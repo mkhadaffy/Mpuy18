@@ -64,7 +64,7 @@ botMessage ="""􀬁􀆉yin yang􏿿*BotCommand*􀬁􀆉yin yang􏿿
 - Absen
 - Respon
 - Runtime
--Kezia copy @
+- Kezia copy @
 - ngeline copy @
 - Backup all
 - /bio
@@ -177,8 +177,10 @@ adminMessage ="""􀬁􀆉yin yang􏿿*AdminCommand*􀬁􀆉yin yang􏿿
 helpMessage ="""􀬁􀆉yin yang􏿿*KezCommand*􀬁􀆉yin yang􏿿
 
 - Help creator
+- Help grup
 - Help admin
 - Help media
+- Help bot
 - Creator
 - Admin
 - Speed
@@ -188,7 +190,7 @@ helpMessage ="""􀬁􀆉yin yang􏿿*KezCommand*􀬁􀆉yin yang􏿿
 KAC=[cl,ki,kk]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
-Bmid = ki.getProfile().mid
+Bmid = kk.getProfile().mid
 Bots=[mid,Amid,Bmid]
 Creator=["uac8e3eaf1eb2a55770bf10c3b2357c33"]
 admin=["uac8e3eaf1eb2a55770bf10c3b2357c33","u04420be1a19f11db8ef6a37a1520f426","u5a31c87ded167546e010a1b7edd36c72","u07457c501b91f911cb9fe553727dc78c","uc4f91334d9b4238ef79aa3f374bbf523","u95f5fcc0013c63589bd45685aeaeda24"]
@@ -886,13 +888,13 @@ def bot(op):
                           G.preventJoinByTicket = False
                           cl.updateGroup(G)
                           Ticket = cl.reissueGroupTicket(op.param1)
-                          km.acceptGroupInvitationByTicket(op.param1,Ticket)
+                          cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                           time.sleep(0.01)
-                          km.kickoutFromGroup(op.param1,[op.param2])
+                          ki.kickoutFromGroup(op.param1,[op.param2])
                           c = Message(to=op.param1, from_=None, text=None, contentType=13)
                           c.contentMetadata={'mid':op.param2}
-                          km.sendMessage(c)
-                          km.leaveGroup(op.param1)
+                          ki.sendMessage(c)
+                          ki.leaveGroup(op.param1)
                           G.preventJoinByTicket = True
                           cl.updateGroup(G)
                           wait["blacklist"][op.param2] = True
@@ -901,13 +903,13 @@ def bot(op):
                           G.preventJoinByTicket = False
                           cl.updateGroup(G)
                           Ticket = cl.reissueGroupTicket(op.param1)
-                          km.acceptGroupInvitationByTicket(op.param1,Ticket)
+                          ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                           time.sleep(0.01)
-                          km.kickoutFromGroup(op.param1,[op.param2])
+                          ki.kickoutFromGroup(op.param1,[op.param2])
                           c = Message(to=op.param1, from_=None, text=None, contentType=13)
                           c.contentMetadata={'mid':op.param2}
-                          km.sendMessage(c)
-                          km.leaveGroup(op.param1)
+                          ki.sendMessage(c)
+                          ki.leaveGroup(op.param1)
                           G.preventJoinByTicket = True
                           cl.updateGroup(G)
                           wait["blacklist"][op.param2] = True
@@ -929,8 +931,10 @@ def bot(op):
                      url = msg.contentMetadata["postEndUrl"]
                      cl.like(url[25:58], url[66:], likeType=1005)
                      ki.like(url[25:58], url[66:], likeType=1005)
+                     kk.like(url[25:58], url[66:], likeType=1005)
                      cl.comment(url[25:58], url[66:], wait["comment1"])
                      ki.comment(url[25:58], url[66:], wait["comment2"])
+                     kk.comment(url[25:58], url[66:], wait["comment3"])
                      cl.sendText(msg.to,"Done Like")                     
                      wait['likeOn'] = False
 
@@ -1237,7 +1241,8 @@ def bot(op):
                      _name = msg.contentMetadata["displayName"]
                      invite = msg.contentMetadata["mid"]
                      groups = cl.getGroup(msg.to)
-                     groups = ki.getGroup(msg.to)                     
+                     groups = ki.getGroup(msg.to)      
+                     groups = kk.getGroup(msg.to)                     
                      pending = groups.invitee
                      targets = []
                      for s in groups.members:
@@ -1251,7 +1256,8 @@ def bot(op):
                          for target in targets:
                              try:
                                  cl.findAndAddContactsByMid(target)
-                                 ki.findAndAddContactsByMid(target)                                 
+                                 ki.findAndAddContactsByMid(target)     
+                                 kk.findAndAddContactsByMid(target)  
                                  random.choice(KAC).inviteIntoGroup(msg.to,[target])
                                  random.choice(KAC).sendText(msg.to,"Invite " + _name)
                                  wait['invite'] = False
@@ -1365,7 +1371,6 @@ def bot(op):
 			    cl.sendText(i,"Kezia disuruh keluar :(")
 		            cl.leaveGroup(i)
 			    ki.leaveGroup(i)
-          kk.leaveGroup(i)
 			    cl.sendText(msg.to,"Success Left ["+ h +"] group")
 			else:
 			    pass
@@ -1379,7 +1384,6 @@ def bot(op):
 			cl.sendText(i,"Bot Di Paksa Keluar Oleh Owner!")
 		        cl.leaveGroup(i)
 			ki.leaveGroup(i)
-      kk.laaveGroup(i)
 		    cl.sendText(msg.to,"Success Leave All Group")
 		else:
 		    cl.sendText(msg.to,"Access Denied For You im Sorry")
