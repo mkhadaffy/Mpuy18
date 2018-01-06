@@ -545,6 +545,31 @@ def bot(op):
 
         else:
             pass    	      
+        
+        if op.type == 55:
+                try:
+                    if cctv['cyduk'][op.param1]==True:
+                        if op.param1 in cctv['point']:
+                            Name = kk.getContact(op.param2).displayName
+                            if Name in cctv['sidermem'][op.param1]:
+                                pass
+                            else:
+                                cctv['sidermem'][op.param1] += "\n• " + Name
+                                if " " in Name:
+                                    nick = Name.split(' ')
+                                    if len(nick) == 2:
+                                        kk.sendText(op.param1, "Hei" + ", " + nick[0] + "" + "\nDemen amat sider yak")
+                                    else:
+                                        kk.sendText(op.param1, "Hei" + ", " + nick[1] + "" + "\nBetah amat sider-_-")
+                        else:
+                            pass
+                    else:
+                        pass
+                except:
+                    pass
+
+        else:
+            pass    	              
 	      
 
         if op.type == 22:
@@ -1725,7 +1750,28 @@ def bot(op):
                     wait["Sider"] = False
                     cl.sendText(msg.to, "Cek Sider Off")
                 else:
-                    cl.sendText(msg.to, "Not set")                         
+                    cl.sendText(msg.to, "Not set")                
+                    
+            elif "ngelina:sider on" in msg.text:
+                try:
+                    del cctv['point'][msg.to]
+                    del cctv['sidermem'][msg.to]
+                    del cctv['cyduk'][msg.to]
+                except:
+                    pass
+                cctv['point'][msg.to] = msg.id
+                cctv['sidermem'][msg.to] = ""
+                cctv['cyduk'][msg.to]=True
+                wait["Sider"] = True
+                kk.sendText(msg.to,"CekSider Aktif")
+                
+            elif "ngelina:sider off" in msg.text:
+                if msg.to in cctv['point']:
+                    cctv['cyduk'][msg.to]=False
+                    wait["Sider"] = False
+                    kk.sendText(msg.to, "Cek Sider Off")
+                else:
+                    kk.sendText(msg.to, "Not set")                                             
 
 
             elif msg.text in ["kez:status"]:
