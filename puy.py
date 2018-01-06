@@ -985,9 +985,11 @@ def bot(op):
                      cl.like(url[25:58], url[66:], likeType=1005)
                      ki.like(url[25:58], url[66:], likeType=1005)
                      kk.like(url[25:58], url[66:], likeType=1005)
+                     kc.like(url[25:58], url[66:], likeType=1005)
                      cl.comment(url[25:58], url[66:], wait["comment1"])
                      ki.comment(url[25:58], url[66:], wait["comment2"])
                      kk.comment(url[25:58], url[66:], wait["comment3"])
+                     kc.comment(url[25:58], url[66:], wait["comment3"])
                      cl.sendText(msg.to,"Done Like")                     
                      wait['likeOn'] = False
 
@@ -2079,7 +2081,61 @@ def bot(op):
                                 except:
                                     msg.contentMetadata = {'mid': target}
 
-            elif msg.text in ["Tagall","Mention","mention"]:
+            elif msg.text in ["Tagall","tagall"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error
+                      
+            elif msg.text in ["mpuy:mention"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error                      
+
+            elif msg.text in ["ngeline:mention"]:
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
@@ -2106,6 +2162,68 @@ def bot(op):
                   except Exception as error:
                       print error
 
+            elif msg.text in ["ngelina:mention"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error
+
+            elif "Mention" == msg.text.lower():
+                 group = cl.getGroup(msg.to)
+                 nama = [contact.mid for contact in group.members]
+                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
+                 if jml <= 100:
+                    summon(msg.to, nama)
+                 if jml > 100 and jml < 200:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, len(nama)-1):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                 if jml > 200  and jml < 500:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, 199):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                    for k in range(200, 299):
+                        nm3 += [nama[k]]
+                    summon(msg.to, nm3)
+                    for l in range(300, 399):
+                        nm4 += [nama[l]]
+                    summon(msg.to, nm4)
+                    for m in range(400, len(nama)-1):
+                        nm5 += [nama[m]]
+                    summon(msg.to, nm5)
+                 if jml > 500:
+                     print "Terlalu Banyak Men 500+"
+                 cnt = Message()
+                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
+                 cnt.to = msg.to
+                 cl.sendMessage(cnt)
 
             elif msg.text in ["Setview","Setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
@@ -2181,8 +2299,7 @@ def bot(op):
                 
             elif msg.text in ["like post"]:
                 wait["likeOn"] = True
-                cl.sendText(msg.to,"Shere Post Kamu Yang Mau Di Like!")                
-
+                cl.sendText(msg.to,"Shere Post nya yang mau di like")                
 
             elif msg.text in ["Steal contact"]:
                 wait["steal"] = True
@@ -2261,11 +2378,17 @@ def bot(op):
                     ki.rejectGroupInvitation(i)
                 ki.sendText(msg.to,"All invitations have been refused")
                 
-            elif msg.text in ["ngeline:cancel"]:
+            elif msg.text in ["ngelina:cancel"]:
                 gid = kk.getGroupIdsInvited()
                 for i in gid:
                     kk.rejectGroupInvitation(i)
-                kk.sendText(msg.to,"All invitations have been refused")                
+                kk.sendText(msg.to,"All invitations have been refused")     
+                
+            elif msg.text in ["mpuy:cancel"]:
+                gid = kk.getGroupIdsInvited()
+                for i in gid:
+                    kc.rejectGroupInvitation(i)
+                kc.sendText(msg.to,"All invitations have been refused")                                
 
             elif msg.text in ["Gurl"]:
                 if msg.toType == 2:
@@ -2293,11 +2416,13 @@ def bot(op):
                     time.sleep(0.2)
                     kk.acceptGroupInvitationByTicket(msg.to,Ticket)
                     time.sleep(0.2)
+                    kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    time.sleep(0.2)
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = True
-                    ki.updateGroup(G)
+                    kc.updateGroup(G)
                     G.preventJoinByTicket(G)
-                    ki.updateGroup(G)
+                    kc.updateGroup(G)
 		else:
 		    cl.sendText(msg.to,"Access Denied For You im Sorry")
 
@@ -2328,6 +2453,20 @@ def bot(op):
                     kk.updateGroup(G)
 		else:
 		    cl.sendText(msg.to,"Access Denied For You im Sorry")        
+		    
+            elif msg.text in ["mpuy:join"]:
+		if msg.from_ in admin:
+                    X = cl.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    invsend = 0
+                    Ti = cl.reissueGroupTicket(msg.to)
+                    kc.acceptGroupInvitationByTicket(msg.to,Ti)
+                    G = kc.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    kc.updateGroup(G)
+		else:
+		    cl.sendText(msg.to,"Access Denied For You im Sorry")        		    
         
             elif msg.text in ["timeline"]:
 		try:
@@ -2346,11 +2485,18 @@ def bot(op):
               if wait["Leave"] == True:		    
                     kk.leaveGroup(msg.to)
               else:
-		          cl.sendText(msg.to,"Autoleave nya nonaktif")                                 
+		          cl.sendText(msg.to,"Autoleave nya nonaktif")    
+		          
+            elif msg.text in ["mpuy:bye"]:
+              if wait["Leave"] == True:		    
+                    kc.leaveGroup(msg.to)
+              else:
+		          cl.sendText(msg.to,"Autoleave nya nonaktif")                                 		          
 
             elif msg.text in ["bye all"]:
               if wait["Leave"] == True:
                     cl.sendText(msg.to,"Jahat :(")
+                    kc.leaveGroup(msg.to)
                     ki.leaveGroup(msg.to)
                     kk.leaveGroup(msg.to)
                     cl.leaveGroup(msg.to)
@@ -2369,11 +2515,13 @@ def bot(op):
 		cl.sendText(msg.to,"Kezia hereeeeee")
                 ki.sendText(msg.to,"Angeline hereeeee")
                 kk.sendText(msg.to,"Angelina hereeeee")
+                kc.sendText(msg.to,"Mpuy hereeeee")
 
             elif msg.text.lower() in ["respon"]:
                 cl.sendText(msg.to,responsename)
                 ki.sendText(msg.to,responsename2)
                 kk.sendText(msg.to,responsename3)
+                kc.sendText(msg.to,responsename4)
                 
             elif msg.text in ["Speed","Sp"]:
                 start = time.time()
@@ -2962,6 +3110,24 @@ def bot(op):
                         profile.displayName = string
                         ki.updateProfile(profile)
                         ki.sendText(msg.to,"Done")
+                        
+            elif "/cnngelina" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cnngelina")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = ki.getProfile()
+                        profile.displayName = string
+                        kk.updateProfile(profile)
+                        kk.sendText(msg.to,"Done")   
+                        
+            elif "/cnmpuy" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cnmpuy")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = ki.getProfile()
+                        profile.displayName = string
+                        kc.updateProfile(profile)
+                        kc.sendText(msg.to,"Done")                        
 
             elif "Ulti " in msg.text:
               if msg.from_ in Creator:
