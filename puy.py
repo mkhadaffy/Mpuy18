@@ -2303,11 +2303,11 @@ def bot(op):
                 ki.sendText(msg.to,responsename2)
                 kk.sendText(msg.to,responsename3)
                 
-            elif msg.text in ["Speed","Sp]:
+            elif msg.text in ["Speed","Sp"]:
                 start = time.time()
-                cl.sendText(msg.to,"「Come Here」")
+                cl.sendText(msg.to, "...")
                 elapsed_time = time.time() - start
-                random.choice(KAC).sendText(msg.to, "%sseconds" % (elapsed_time))                
+                cl.sendText(msg.to, "%sDetik" % (elapsed_time))
 
 
             elif "Nk: " in msg.text:
