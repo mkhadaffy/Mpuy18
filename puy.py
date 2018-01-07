@@ -36,34 +36,6 @@ print "=====[Sukses All Login]====="
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-
-selfMessage ="""
-╔═════════════════════════
-║   S E L F 
-╠═════════════════════════
-╠➩ Hi
-╠➩ Me
-╠➩ Mymid
-╠➩ Mid @
-╠➩ SearchID: (ID LINE)
-╠➩ Checkdate (DD/MM/YY)
-╠➩ Kalender
-╠➩ Steal contact
-╠➩ Pp @
-╠➩ Cover @
-╠➩ like post
-╠➩ Scbc Text
-╠➩ Cbc Text
-╠➩ Gbc Text
-╠➩ Getbio @
-╠➩ Getinfo @
-╠➩ Getname @
-╠➩ Getprofile @
-╠➩ Getcontact @
-╠➩ Getvid @
-╠➩ Friendlist
-╚═════════════════════════"""
-
 botMessage ="""􀬁􀆉yin yang􏿿*BotCommand*􀬁􀆉yin yang􏿿
 
 - Absen
@@ -135,7 +107,10 @@ creatorMessage ="""􀬁􀆉yin yang􏿿*CreatorCommand*􀬁􀆉yin yang􏿿
 - Admin add @
 - Admin remove @
 - Crash
-- /cnkez
+- /cnall
+- /cnmpuy
+- /cnngelina
+- /cnkezia
 - /cnngeline
 - Kickall
 - Bc: (text)
@@ -144,14 +119,13 @@ creatorMessage ="""􀬁􀆉yin yang􏿿*CreatorCommand*􀬁􀆉yin yang􏿿
 - Join group: (groupname)
 - Leave all group
 - Leave group: (groupname)
-- Tag on
+- kez:tag on
 - kez:restart
 - Turn off"""
 
 adminMessage ="""􀬁􀆉yin yang􏿿*AdminCommand*􀬁􀆉yin yang􏿿
 
 - Admin
-- Allprotect on/off
 - Ban @
 - Unban @
 - Clear ban
@@ -169,6 +143,7 @@ adminMessage ="""􀬁􀆉yin yang􏿿*AdminCommand*􀬁􀆉yin yang􏿿
 - Invitemeto: (gid)
 - Acc invite
 - Removechat
+- kez:allprotect on/off
 - kez:qr on/off
 - kez:ghost on/off
 - kez:autocancel on/off
@@ -182,9 +157,8 @@ adminMessage ="""􀬁􀆉yin yang􏿿*AdminCommand*􀬁􀆉yin yang􏿿
 helpMessage ="""􀬁􀆉yin yang􏿿*KezCommand*􀬁􀆉yin yang􏿿
 
 - Help creator
-- Help grup
+- Help group
 - Help admin
-- Help media
 - Help bot
 - Creator
 - Admin
@@ -3105,7 +3079,21 @@ def bot(op):
                         profile.statusMessage = string
                         cl.updateProfile(profile)
                         ki.updateProfile(profile)
+                        kk.updateProfile(profile)
+                        kc.updateProfile(profile)
                         cl.sendText(msg.to,"All Done")
+
+            elif "/cnall" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cnall")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = cl.getProfile()
+                        profile.displayName = string
+                        cl.updateProfile(profile)
+                        ki.updateProfile(profile)
+                        kk.updateProfile(profile)
+                        kc.updateProfile(profile)
+                        cl.sendText(msg.to,"Done")
 
             elif "/cnkezia" in msg.text:
 		if msg.from_ in Creator:
@@ -3115,10 +3103,19 @@ def bot(op):
                         profile.displayName = string
                         cl.updateProfile(profile)
                         cl.sendText(msg.to,"Done")
-
-            elif "/cnngel" in msg.text:
+                        
+            elif "/cnmpuy" in msg.text:
 		if msg.from_ in Creator:
-                    string = msg.text.replace("/cnngel")
+                    string = msg.text.replace("/cnmpuy")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = kc.getProfile()
+                        profile.displayName = string
+                        kc.updateProfile(profile)
+                        kc.sendText(msg.to,"Done")                        
+
+            elif "/cnngeline" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cnngeline")
                     if len(string.decode('utf-8')) <= 5000:
                         profile = ki.getProfile()
                         profile.displayName = string
@@ -3532,6 +3529,7 @@ def bot(op):
                         cl.removeAllMessages(op.param2)
                         ki.removeAllMessages(op.param2)
                         kk.removeAllMessages(op.param2)
+                        kc.removeAllMessages(op.param2)
                         print "[Command] Remove Chat"
                         cl.sendText(msg.to,"Done")
                     except Exception as error:
@@ -3549,6 +3547,7 @@ def bot(op):
                             cl.findAndAddContactsByMid(msg.from_)
                             ki.findAndAddContactsByMid(msg.from_)
                             kk.findAndAddContactsByMid(msg.from_)
+                            kc.findAndAddContactsByMid(msg.from_)
                             random.choice(KAC).inviteIntoGroup(gid,[msg.from_])
                         except:
                             cl.sendText(msg.to,"Mungkin Saya Tidak Di Dalaam Grup Itu")
@@ -3560,7 +3559,7 @@ def bot(op):
                 h = ""
                 for i in gid:
                     h += "╠➩" + "%s\n" % (cl.getGroup(i).name +" ~> ["+str(len(cl.getGroup(i).members))+"]")
-                cl.sendText(msg.to,"╔═════════════════════════\n║          ☆☞ LIST GROUPS☜☆\n╠═════════════════════════\n" + h + "╠═════════════════════════" + "\n║ Total Groups =" +" ["+str(len(gid))+"]\n╚═════════════════════════")
+                cl.sendText(msg.to,"╔═════════════════════════\n║LIST GROUPS\n╠═════════════════════════\n" + h + "╠═════════════════════════" + "\n║ Total Groups =" +" ["+str(len(gid))+"]\n╚═════════════════════════")
 
             elif msg.text in ["Glistmid"]:   
                 gruplist = cl.getGroupIdsJoined()
@@ -3607,12 +3606,14 @@ def bot(op):
                     gid = cl.getGroup(gids)
                     gid = ki.getGroup(gids)
                     gid = kk.getGroup(gids)
+                    gid = kc.getGroup(gids)
                     for i in gid:
                         if i is not None:
                             try:
                                 cl.rejectGroupInvitation(i)
                                 ki.rejectGroupInvitation(i)
                                 kk.rejectGroupInvitation(i) 
+                                kc.rejectGroupInvitation(i) 
                             except:
                                 cl.sendText(msg.to,"Error!")
                                 break
@@ -3628,31 +3629,25 @@ def bot(op):
                     gid = cl.getGroupIdsInvited()
                     gid = ki.getGroupIdsInvited()
                     gid = kk.getGroupIdsInvited()
+                    gid = kc.getGroupIdsInvited()
                     _list = ""
                     for i in gid:
                         if i is not None:
                             gids = cl.getGroup(i)
                             gids = ki.getGroup(i)
                             gids = kk.getGroup(i)
+                            gids = kc.getGroup(i)
                             _list += gids.name
                             cl.acceptGroupInvitation(i)
                             ki.acceptGroupInvitation(i)
                             kk.acceptGroupInvitation(i)
+                            kc.acceptGroupInvitation(i)
                         else:
                             break
                     if gid is not None:
                         cl.sendText(msg.to,"Berhasil terima semua undangan dari grup :\n" + _list)
                     else:
                         cl.sendText(msg.to,"Tidak ada grup yang tertunda saat ini")           
-
-
-            elif "Gif gore" in msg.text:
-            	gif = ("https://media.giphy.com/media/l2JHVsQiOZrNMGzYs/giphy.gif","https://media.giphy.com/media/OgltQ2hbilzJS/200w.gif")
-                gore = random.choice(gif)
-                cl.sendGifWithURL(msg.to,gore)
-
-
-
 
         if op.type == 59:
             print op
