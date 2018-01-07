@@ -55,6 +55,18 @@ botMessage ="""􀬁􀆉yin yang􏿿*BotCommand*􀬁􀆉yin yang􏿿
 - kezia2 copy @
 - kezia3 copy @
 - kezia4 copy @
+- Setpoint on / Viewseen
+- kez2:setpoint on / kez2:Viewseen
+- kez3:setpoint on / kez3:Viewseen
+- kez4:setpoint on / kez4:Viewseen
+- kez5:setpoint on / kez5:Viewseen
+- kez6:setpoint on / kez6:Viewseen
+- mention
+- kez2:mention
+- kez3:mention
+- kez4:mention
+- kez5:mention
+- kez6:mention
 - Backup all
 - /bio
 - kez1:bye
@@ -140,6 +152,12 @@ creatorMessage ="""􀬁􀆉yin yang􏿿*CreatorCommand*􀬁􀆉yin yang􏿿
 adminMessage ="""􀬁􀆉yin yang􏿿*AdminCommand*􀬁􀆉yin yang􏿿
 
 - Admin
+- All join / Sini
+- kez2:join
+- kez3:join
+- kez4:join
+- kez5:join
+- kez6:join
 - Ban @
 - Unban @
 - Clear ban
@@ -2539,7 +2557,7 @@ def bot(op):
 
             elif msg.text in ["Setview","Setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                cl.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                cl.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["Viewseen"]:
@@ -2582,7 +2600,7 @@ def bot(op):
                     
             elif msg.text in ["kez2:setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                ki.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                ki.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["kez2:viewseen"]:
@@ -2625,7 +2643,7 @@ def bot(op):
 
             elif msg.text in ["kez3:setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kk.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                kk.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["kez3:viewseen"]:
@@ -2668,7 +2686,7 @@ def bot(op):
                     
             elif msg.text in ["kez4:setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kc.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                kc.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["kez4:viewseen"]:
@@ -2711,7 +2729,7 @@ def bot(op):
 
             elif msg.text in ["kez5:setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kr.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                kr.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["kez5:viewseen"]:
@@ -2754,7 +2772,7 @@ def bot(op):
 
             elif msg.text in ["kez6:setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                ks.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                ks.sendText(msg.to, "Checkpoint Checked")
                 print "Setview"
 
             elif msg.text in ["kez6:viewseen"]:
