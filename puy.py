@@ -189,7 +189,7 @@ Dmid = kc.getProfile().mid
 Emid = kc.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
 Creator=["uac8e3eaf1eb2a55770bf10c3b2357c33"]
-admin=["uac8e3eaf1eb2a55770bf10c3b2357c33","u04420be1a19f11db8ef6a37a1520f426","u5a31c87ded167546e010a1b7edd36c72","u07457c501b91f911cb9fe553727dc78c","uc4f91334d9b4238ef79aa3f374bbf523","u95f5fcc0013c63589bd45685aeaeda24","u23ad5ddec0dd0523f9caffad673d693c","ue4e06387a5cae9fdf8cd018a41b35e98"]
+admin=["uac8e3eaf1eb2a55770bf10c3b2357c33","u04420be1a19f11db8ef6a37a1520f426","u5a31c87ded167546e010a1b7edd36c72","u07457c501b91f911cb9fe553727dc78c","uc4f91334d9b4238ef79aa3f374bbf523","u95f5fcc0013c63589bd45685aeaeda24"]
 
 contact = cl.getProfile()
 backup1 = cl.getProfile()
@@ -2539,7 +2539,7 @@ def bot(op):
 
             elif msg.text in ["Setview","Setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                cl.sendText(msg.to, "Checkpoint Checked")
+                cl.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
                 print "Setview"
 
             elif msg.text in ["Viewseen"]:
@@ -2578,6 +2578,221 @@ def bot(op):
                         cl.sendText(msg.to, "Auto Checkpoint")                        
                     else:
                         cl.sendText(msg.to, "Belum Ada Viewers")
+                    print "Viewseen"
+                    
+            elif msg.text in ["kez2:setpoint on"]:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                ki.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                print "Setview"
+
+            elif msg.text in ["kez2:viewseen"]:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = ki.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        tukang = "=READ LIST=\n :"
+                        grp = '\n : '.join(str(f) for f in dataResult)
+                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
+                        ki.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
+                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                        ki.sendText(msg.to, "Auto Checkpoint")                        
+                    else:
+                        ki.sendText(msg.to, "Belum Ada Viewers")
+                    print "Viewseen"                    
+
+            elif msg.text in ["kez3:setpoint on"]:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                kk.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                print "Setview"
+
+            elif msg.text in ["kez3:viewseen"]:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = kk.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        tukang = "=READ LIST=\n :"
+                        grp = '\n : '.join(str(f) for f in dataResult)
+                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
+                        kk.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
+                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                        kk.sendText(msg.to, "Auto Checkpoint")                        
+                    else:
+                        kk.sendText(msg.to, "Belum Ada Viewers")
+                    print "Viewseen"
+                    
+            elif msg.text in ["kez4:setpoint on"]:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                kc.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                print "Setview"
+
+            elif msg.text in ["kez4:viewseen"]:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = kc.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        tukang = "=READ LIST=\n :"
+                        grp = '\n : '.join(str(f) for f in dataResult)
+                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
+                        kc.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
+                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                        kc.sendText(msg.to, "Auto Checkpoint")                        
+                    else:
+                        kc.sendText(msg.to, "Belum Ada Viewers")
+                    print "Viewseen"                    
+
+            elif msg.text in ["kez5:setpoint on"]:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                kr.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                print "Setview"
+
+            elif msg.text in ["kez5:viewseen"]:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = kr.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        tukang = "=READ LIST=\n :"
+                        grp = '\n : '.join(str(f) for f in dataResult)
+                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
+                        kr.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
+                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                        kr.sendText(msg.to, "Auto Checkpoint")                        
+                    else:
+                        kr.sendText(msg.to, "Belum Ada Viewers")
+                    print "Viewseen"
+
+            elif msg.text in ["kez6:setpoint on"]:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                ks.sendText(msg.to, "Checkpoint Checked on\n%H:%M:%S")
+                print "Setview"
+
+            elif msg.text in ["kez6:viewseen"]:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = ks.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        tukang = "=READ LIST=\n :"
+                        grp = '\n : '.join(str(f) for f in dataResult)
+                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
+                        ks.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
+                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                        ks.sendText(msg.to, "Auto Checkpoint")                        
+                    else:
+                        ks.sendText(msg.to, "Belum Ada Viewers")
                     print "Viewseen"
 
 	    elif "Kick " in msg.text:
@@ -2934,12 +3149,12 @@ def bot(op):
             elif msg.text in ["Ban"]:
                 if msg.from_ in admin:
                     wait["wblacklist"] = True
-                    ki.sendText(msg.to,"send contact")
+                    cl.sendText(msg.to,"send contact")
 
             elif msg.text in ["Unban"]:
                 if msg.from_ in admin:
                     wait["dblacklist"] = True
-                    ki.sendText(msg.to,"send contact")
+                    cl.sendText(msg.to,"send contact")
  
             elif "Ban @" in msg.text:
                 if msg.from_ in admin:
@@ -3369,12 +3584,12 @@ def bot(op):
                                 #cl.sendImageWithURL(msg.to,pilih)
 
  
-            elif "Spam: " in msg.text:
-                  bctxt = msg.text.replace("Spam: ", "")
-                  t = 10
-                  while(t):
-                    random.choice(KAC).sendText(msg.to, (bctxt))
-                    t-=1
+           # elif "Spam: " in msg.text:
+           #       bctxt = msg.text.replace("Spam: ", "")
+           #       t = 10
+           #       while(t):
+           #         random.choice(KAC).sendText(msg.to, (bctxt))
+           #         t-=1
 
             elif "Scbc " in msg.text:
                   bctxt = msg.text.replace("Scbc ", "")
@@ -3909,6 +4124,204 @@ def bot(op):
                 kc.sendText(msg.to,"ddddddddddddddddddddddddddddddddd")
                 kr.sendText(msg.to,"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
                 ks.sendText(msg.to,"fffffffffffffffffffffffffffffffffff")
+
+            elif "Spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
+            elif "kez2:spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = ki.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        ki.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
+            elif "kez3:spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = kk.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        kk.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
+            elif "kez4:spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = kc.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        kc.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
+            elif "kez5:spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = kr.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        kr.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
+            elif "kez6:spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = ks.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        ks.sendMessage(msg)
+                        print "Spamtag Berhasil."
 
             elif "Getvid @" in msg.text:
                 print "[Command]dp executing"
