@@ -1150,9 +1150,9 @@ def bot(op):
             elif msg.text is None:
                 return
  
-            elif msg.text in ["Creator","Owner"]:
+            elif cms(msg.text,["/creator","Creator"]):
                 msg.contentType = 13
-                msg.contentMetadata = {'uac8e3eaf1eb2a55770bf10c3b2357c33'}
+                msg.contentMetadata = {'mid': "uac8e3eaf1eb2a55770bf10c3b2357c33"}
                 cl.sendMessage(msg)
 
             elif cms(msg.text,["Admin","admin"]):
@@ -1845,7 +1845,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -1875,7 +1875,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -1905,7 +1905,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -1935,7 +1935,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -1965,7 +1965,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -1995,7 +1995,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -2025,7 +2025,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -2055,7 +2055,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -2085,7 +2085,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -2115,7 +2115,7 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    cl.sendText(msg.to,_name + " Check Your Gift")
+                                    cl.sendText(msg.to,_name + " pls cek u gift")
                                     msg.contentType = 9
                                     msg.contentMetadata= {'PRDTYPE': 'STICKER',
                                                          'STKVER': '1',
@@ -2127,7 +2127,7 @@ def bot(op):
                                 except:
                                     msg.contentMetadata = {'mid': target}
 
-            elif msg.text in ["Tagall","tagall"]:
+            elif msg.text in ["Tagall","mention"]:
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
@@ -2155,7 +2155,7 @@ def bot(op):
                       print error
                       
             elif msg.text in ["mpuy:mention"]:
-                  group = cl.getGroup(msg.to)
+                  group = kc.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
                   cb = ""
@@ -2177,12 +2177,12 @@ def bot(op):
                   msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
 
                   try:
-                      cl.sendMessage(msg)
+                      kc.sendMessage(msg)
                   except Exception as error:
                       print error                      
 
             elif msg.text in ["ngeline:mention"]:
-                  group = cl.getGroup(msg.to)
+                  group = ki.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
                   cb = ""
@@ -2204,12 +2204,12 @@ def bot(op):
                   msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
 
                   try:
-                      cl.sendMessage(msg)
+                      ki.sendMessage(msg)
                   except Exception as error:
                       print error
 
             elif msg.text in ["ngelina:mention"]:
-                  group = cl.getGroup(msg.to)
+                  group = kk.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
                   cb = ""
@@ -2231,45 +2231,9 @@ def bot(op):
                   msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
 
                   try:
-                      cl.sendMessage(msg)
+                      kk.sendMessage(msg)
                   except Exception as error:
                       print error
-
-            elif "Mention" == msg.text.lower():
-                 group = cl.getGroup(msg.to)
-                 nama = [contact.mid for contact in group.members]
-                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 100:
-                    summon(msg.to, nama)
-                 if jml > 100 and jml < 200:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, len(nama)-1):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                 if jml > 200  and jml < 500:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, 399):
-                        nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                    for m in range(400, len(nama)-1):
-                        nm5 += [nama[m]]
-                    summon(msg.to, nm5)
-                 if jml > 500:
-                     print "Terlalu Banyak Men 500+"
-                 cnt = Message()
-                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
-                 cnt.to = msg.to
-                 cl.sendMessage(cnt)
 
             elif msg.text in ["Setview","Setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
@@ -2385,6 +2349,8 @@ def bot(op):
                 midd = msg.text.replace("Invite: ","")
                 cl.findAndAddContactsByMid(midd)
                 ki.findAndAddContactsByMid(midd)
+                kk.findAndAddContactsByMid(midd)
+                kc.findAndAddContactsByMid(midd)
                 random.choice(KAC).inviteIntoGroup(msg.to,[midd])
 
             elif "Invite creator" in msg.text:
@@ -2406,7 +2372,7 @@ def bot(op):
 		gid = cl.getGroupIdsJoined()
 		if msg.from_ in Creator:
 		    for i in gid:
-			cl.sendText(i,"             [BROADCAST]\n\n"+bc+"\n\nContact Me In : line.me/ti/p/~yapuy")
+			cl.sendText(i,"             [BROADCAST]\n\n"+bc+"\n\nby : line.me/ti/p/~yapuy")
 		    cl.sendText(msg.to,"Success.")
 		else:
 		    cl.sendText(msg.to,"Access Denied For You")
@@ -2430,7 +2396,7 @@ def bot(op):
                 kk.sendText(msg.to,"All invitations have been refused")     
                 
             elif msg.text in ["mpuy:cancel"]:
-                gid = kk.getGroupIdsInvited()
+                gid = kc.getGroupIdsInvited()
                 for i in gid:
                     kc.rejectGroupInvitation(i)
                 kc.sendText(msg.to,"All invitations have been refused")                                
@@ -2449,7 +2415,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 
-            elif msg.text in ["All join","Join all"]:
+            elif msg.text in ["All join","Sini"]:
 		if msg.from_ in admin:
 		    G = cl.getGroup(msg.to)
                     ginfo = cl.getGroup(msg.to)
@@ -2609,7 +2575,7 @@ def bot(op):
 			    else:
 			        cl.sendText(msg.to,"Admin Detected")
 		else:
-		    cl.sendText(msg.to,"Lu sape!")
+		    cl.sendText(msg.to,"ngapain?")
  
             elif msg.text in ["Ban"]:
                 if msg.from_ in admin:
@@ -2685,7 +2651,7 @@ def bot(op):
             elif msg.text.lower() == 'clear ban':
                 if msg.from_ in admin:
                     wait["blacklist"] = {}
-                    cl.sendText(msg.to,"ヽ( ^ω^)ﾉ└ ❉Unbanned All Success❉ ┐") 
+                    cl.sendText(msg.to,"Cleared Banlist") 
 
             elif msg.text.lower() in ["bot","Kezia"]:
                 cl.sendText(msg.to,"Knp kak?Kezia disini,\nKetik Help Untuk Bantuan") 
@@ -2704,7 +2670,7 @@ def bot(op):
                             return
                         for jj in matched_list:
                             random.choice(KAC).kickoutFromGroup(msg.to,[jj])
-                        ki.sendText(msg.to,"Blacklist emang pantas tuk di usir")
+                        ki.sendText(msg.to,"Blacklist asw")
 		else:
 		    cl.sendText(msg.to, "Access Denied For You im Sorry")
  
@@ -2819,6 +2785,8 @@ def bot(op):
 
             elif msg.text in ["Backup all"]:
                 try:
+                    kc.updateDisplayPicture(backup4.pictureStatus)
+                    kc.updateProfile(backup4)                                      
                     kk.updateDisplayPicture(backup3.pictureStatus)
                     kk.updateProfile(backup3)                  
                     ki.updateDisplayPicture(backup2.pictureStatus)
@@ -2839,6 +2807,7 @@ def bot(op):
 					for song in data:
 						abc = song[3].replace('https://','http://')
 						cl.sendText(msg.to, "Title : " + song[0] + "\nLength : " + song[1] + "\nLink download : " + song[4])
+						cl.sendAudioWithURL(msg.to,abc)
 	
             elif '/lirik ' in msg.text.lower():
                 try:
