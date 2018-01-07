@@ -3003,10 +3003,10 @@ def bot(op):
                                 r = x.get(page)
                                 url = re.search(r'"video_url": "([^"]+)"', r.text).group(1)
                                 print(url)
-                                cl.sendVideoWithURL(msg.to,url)
+                                kc.sendVideoWithURL(msg.to,url)
                             else:
                                 print (node['display_src'])
-                                cl.sendImageWithURL(msg.to,node['display_src'])
+                                kc.sendImageWithURL(msg.to,node['display_src'])
                         end_cursor = re.search(r'"end_cursor": "([^"]+)"', r.text).group(1)                	
 
 
@@ -3043,14 +3043,14 @@ def bot(op):
                 lang = 'id'
                 tts = gTTS(text=say, lang=lang)
                 tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
+                kc.sendAudio(msg.to,"hasil.mp3")
 
             elif "Say-en " in msg.text:
                 say = msg.text.replace("Say-en ","")
                 lang = 'en'
                 tts = gTTS(text=say, lang=lang)
                 tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
+                kc.sendAudio(msg.to,"hasil.mp3")
 
             elif "Say-jp " in msg.text:
                 say = msg.text.replace("Say-jp ","")
