@@ -11,43 +11,43 @@ import time,random,sys,json,codecs,threading,glob,urllib,urllib2,re,ast,os,subpr
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token='Eo3OZSnEIm84xAVlvob0.udjXm+oXWdAsPTVBgX3cWa.ru8Axc0JaK1DYmFi4J7j956b3y6goczQVA4tLtjh2t0=')
+cl.login(token='Eo8xOfZ8T4iSmy2XzHa0.udjXm+oXWdAsPTVBgX3cWa.Gdp1GWLOHhfI8f56ePaPKzcAfZdPzfdwVy9WrzAIFaA=')
 cl.loginResult()
 print "Cl-Login Success\n"
 
 ki = LINETCR.LINE()
 #ki.login(qr=True)
-ki.login(token='Eor6oQzodfegwPPP0ENd.+EjGmcOL1XSCj/yTns2vBq.dilhdRfLTGsfgzn236yrllk3OpuAU4+V+uP3fF4Ukwo=')
+ki.login(token='EoJwvTlc4e55fW28w3Nd.+EjGmcOL1XSCj/yTns2vBq.tu2txpC1cP026dSoAChZNII3QhSE4wMSP9OjT4r110U=')
 ki.loginResult()
 print "Ki-Login Success\n"
 
 kk = LINETCR.LINE()
-kk.login(token="EoRQQFsBRmwAKR181KL0.v49TfwwrrE1egDz80w4QKa.Xw9ZRocN+c4r94Shb3hjDjz0B6+Dts4TW8X7Oi4mfYU=")
+kk.login(token="EoEJlGu3Z62jT8Vm4M3e.cizeQqNnfxR0s20S26siJG.UJu3z51ZeT5EIVqLDfCcwoJ/QOpShSVttm9KvP46ew0=")
 kk.loginResult()
 print "eaaaaaa\n"
 
 kc = LINETCR.LINE()
-kc.login(token="EogRSiCnHqfUJAEdC5X3.UAcSMqonILLriuREirzzuW.R65BtxiExOAtVeuhI8Ktm+RuJjwNnrctrSLI/frrO6Y=")
+kc.login(token="EoqiRfPIVRlfYfVgOVv3.UAcSMqonILLriuREirzzuW.O9kCwu1656GTISg6Y99LOLn/QnBAZ0Prwe4suWNcTvE=")
 kc.loginResult()
 print "eaaaaaaaaaa\n"
 
 kr = LINETCR.LINE()
-kr.login(token="EoG3XUoKPOJKxFelgJ4e.cizeQqNnfxR0s20S26siJG.aoHpK7ip+qfl4bBzOxemVQBixkckiZeSwxD+6JxZGHQ=")
+kr.login(token="EoCsMmK6xQQsDN6HZy28./6IhiA909mDOlReutlH+Ea.3cuLfOHYZBbGRYY1BbXViL3nfAb+ksuQFZMXX9lTdRI=")
 kr.loginResult()
 print "eaaaaaaaaaaaaaaa\n"
 
 ks = LINETCR.LINE()
-ks.login(token="EopMWsP6Arfg93fQgyc8./6IhiA909mDOlReutlH+Ea.rKttJNuyPplLt0U04tQ4Ua1Q+UdUOsBnwjceHkucD1M=")
+ks.login(token="EownyDat0uFOuJNBysRa.jCrCvL7g56Fi41uuVPsLwG.OllD01RKG/fjVlTJaxxTjryhQ+DDZoM+FQ1SKnw2aIE=")
 ks.loginResult()
 print "eaaaaaaaaaaaaaaaaaaa\n"
 
 kb = LINETCR.LINE()
-kb.login(token="Eo3HRbepbTrVFiLWEkFa.jCrCvL7g56Fi41uuVPsLwG.CgMp3zJEa4Rcr/0i+pwWxgaxbOAmH1vmV8lxoW+V+aE=")
+kb.login(token="EohnRWTi7qPyBcZLDYi0.v49TfwwrrE1egDz80w4QKa.8IPLeA31oiqbkjlyKs1/+7xlZhsZlbSaOzzUPjW01qw=")
 kb.loginResult()
 print "eeeeeeeeeeeeeeeeeeascacxzas"
 
 kj = LINETCR.LINE()
-kj.login(token="Eog6Ns0zumMObheaLEkd.NDTUuoFwHk9Lw62uGnNI3q.I/RmEZGGotm0jmyTbfW1qNJRlINsHiVj/L+67wA7atM=")
+kj.login(token="EokTIKss0G4IxAzm9MZd.NDTUuoFwHk9Lw62uGnNI3q.IpbbevV9K8WCmvOEJCtLbw9ik5tIvefOPEVBPTAC4uo=")
 kj.loginResult()
 print "ascasczxcjsnajjjjjjjjjcxzc"
 
@@ -65,24 +65,29 @@ botMessage ="""􀬁􀆉yin yang􏿿*BotCommand*􀬁􀆉yin yang􏿿
 - kezia2 copy @
 - kezia3 copy @
 - kezia4 copy @
+- kezia5 copy @
+- kezia6 copy @
+- kezia7 copy @
+- kezia8 copy @
 - Setpoint on / Viewseen
-- kez2:setpoint on / kez2:Viewseen
-- kez3:setpoint on / kez3:Viewseen
-- kez4:setpoint on / kez4:Viewseen
-- kez5:setpoint on / kez5:Viewseen
-- kez6:setpoint on / kez6:Viewseen
 - mention
 - kez2:mention
 - kez3:mention
 - kez4:mention
 - kez5:mention
 - kez6:mention
+- kez7:mention
+- kez8:mention
 - Backup all
 - /bio
 - kez1:bye
 - kez2:bye
 - kez3:bye
-- kez4:bye"""
+- kez4:bye
+- kez5:bye
+- kez6:bye
+- kez7:bye
+- kez8:bye"""
 
 mediaMessage ="""􀬁􀆉yin yang􏿿*MediaCommand*􀬁􀆉yin yang􏿿
 
@@ -148,6 +153,10 @@ creatorMessage ="""􀬁􀆉yin yang􏿿*CreatorCommand*􀬁􀆉yin yang􏿿
 - /cn2
 - /cn3
 - /cn4
+- /cn5
+- /cn6
+- /cn7
+- /cn8
 - Kickall
 - Bc: (text)
 - Nk: @
@@ -1283,12 +1292,16 @@ def bot(op):
                      kc.like(url[25:58], url[66:], likeType=1005)
                      kr.like(url[25:58], url[66:], likeType=1005)
                      ks.like(url[25:58], url[66:], likeType=1005)
+                     kb.like(url[25:58], url[66:], likeType=1005)
+                     kj.like(url[25:58], url[66:], likeType=1005)
                      cl.comment(url[25:58], url[66:], wait["comment1"])
                      ki.comment(url[25:58], url[66:], wait["comment2"])
                      kk.comment(url[25:58], url[66:], wait["comment3"])
                      kc.comment(url[25:58], url[66:], wait["comment4"])
                      kr.comment(url[25:58], url[66:], wait["comment5"])
                      ks.comment(url[25:58], url[66:], wait["comment6"])
+                     kb.comment(url[25:58], url[66:], wait["comment7"])
+                     ks.comment(url[25:58], url[66:], wait["comment8"])
                      cl.sendText(msg.to,"Done Like")                     
                      wait['likeOn'] = False
 
@@ -2574,6 +2587,60 @@ def bot(op):
                       ks.sendMessage(msg)
                   except Exception as error:
                       print error
+                      
+            elif msg.text in ["kez7:mention"]:
+                  group = kb.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      kb.sendMessage(msg)
+                  except Exception as error:
+                      print error
+                      
+            elif msg.text in ["kez8:mention"]:
+                  group = kj.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      kj.sendMessage(msg)
+                  except Exception as error:
+                      print error                      
 
             elif msg.text in ["Setview","Setpoint on"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
@@ -2618,221 +2685,6 @@ def bot(op):
                         cl.sendText(msg.to, "Belum Ada Viewers")
                     print "Viewseen"
                     
-            elif msg.text in ["kez2:setpoint on"]:
-                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                ki.sendText(msg.to, "Checkpoint Checked")
-                print "Setview"
-
-            elif msg.text in ["kez2:viewseen"]:
-	        lurkGroup = ""
-	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
-                with open('dataSeen/'+msg.to+'.txt','r') as rr:
-                    contactArr = rr.readlines()
-                    for v in xrange(len(contactArr) -1,0,-1):
-                        num = re.sub(r'\n', "", contactArr[v])
-                        contacts.append(num)
-                        pass
-                    contacts = list(set(contacts))
-                    for z in range(len(contacts)):
-                        arg = contacts[z].split('|')
-                        userList.append(arg[0])
-                        timelist.append(arg[1])
-                    uL = list(set(userList))
-                    for ll in range(len(uL)):
-                        try:
-                            getIndexUser = userList.index(uL[ll])
-                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
-                            recheckData.append(userList[getIndexUser])
-                        except IndexError:
-                            conName.append('nones')
-                            pass
-                    contactId = ki.getContacts(recheckData)
-                    for v in range(len(recheckData)):
-                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
-                        pass
-                    if len(dataResult) > 0:
-                        tukang = "=READ LIST=\n :"
-                        grp = '\n : '.join(str(f) for f in dataResult)
-                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
-                        ki.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
-                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                        ki.sendText(msg.to, "Auto Checkpoint")                        
-                    else:
-                        ki.sendText(msg.to, "Belum Ada Viewers")
-                    print "Viewseen"                    
-
-            elif msg.text in ["kez3:setpoint on"]:
-                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kk.sendText(msg.to, "Checkpoint Checked")
-                print "Setview"
-
-            elif msg.text in ["kez3:viewseen"]:
-	        lurkGroup = ""
-	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
-                with open('dataSeen/'+msg.to+'.txt','r') as rr:
-                    contactArr = rr.readlines()
-                    for v in xrange(len(contactArr) -1,0,-1):
-                        num = re.sub(r'\n', "", contactArr[v])
-                        contacts.append(num)
-                        pass
-                    contacts = list(set(contacts))
-                    for z in range(len(contacts)):
-                        arg = contacts[z].split('|')
-                        userList.append(arg[0])
-                        timelist.append(arg[1])
-                    uL = list(set(userList))
-                    for ll in range(len(uL)):
-                        try:
-                            getIndexUser = userList.index(uL[ll])
-                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
-                            recheckData.append(userList[getIndexUser])
-                        except IndexError:
-                            conName.append('nones')
-                            pass
-                    contactId = kk.getContacts(recheckData)
-                    for v in range(len(recheckData)):
-                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
-                        pass
-                    if len(dataResult) > 0:
-                        tukang = "=READ LIST=\n :"
-                        grp = '\n : '.join(str(f) for f in dataResult)
-                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
-                        kk.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
-                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                        kk.sendText(msg.to, "Auto Checkpoint")                        
-                    else:
-                        kk.sendText(msg.to, "Belum Ada Viewers")
-                    print "Viewseen"
-                    
-            elif msg.text in ["kez4:setpoint on"]:
-                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kc.sendText(msg.to, "Checkpoint Checked")
-                print "Setview"
-
-            elif msg.text in ["kez4:viewseen"]:
-	        lurkGroup = ""
-	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
-                with open('dataSeen/'+msg.to+'.txt','r') as rr:
-                    contactArr = rr.readlines()
-                    for v in xrange(len(contactArr) -1,0,-1):
-                        num = re.sub(r'\n', "", contactArr[v])
-                        contacts.append(num)
-                        pass
-                    contacts = list(set(contacts))
-                    for z in range(len(contacts)):
-                        arg = contacts[z].split('|')
-                        userList.append(arg[0])
-                        timelist.append(arg[1])
-                    uL = list(set(userList))
-                    for ll in range(len(uL)):
-                        try:
-                            getIndexUser = userList.index(uL[ll])
-                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
-                            recheckData.append(userList[getIndexUser])
-                        except IndexError:
-                            conName.append('nones')
-                            pass
-                    contactId = kc.getContacts(recheckData)
-                    for v in range(len(recheckData)):
-                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
-                        pass
-                    if len(dataResult) > 0:
-                        tukang = "=READ LIST=\n :"
-                        grp = '\n : '.join(str(f) for f in dataResult)
-                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
-                        kc.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
-                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                        kc.sendText(msg.to, "Auto Checkpoint")                        
-                    else:
-                        kc.sendText(msg.to, "Belum Ada Viewers")
-                    print "Viewseen"                    
-
-            elif msg.text in ["kez5:setpoint on"]:
-                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                kr.sendText(msg.to, "Checkpoint Checked")
-                print "Setview"
-
-            elif msg.text in ["kez5:viewseen"]:
-	        lurkGroup = ""
-	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
-                with open('dataSeen/'+msg.to+'.txt','r') as rr:
-                    contactArr = rr.readlines()
-                    for v in xrange(len(contactArr) -1,0,-1):
-                        num = re.sub(r'\n', "", contactArr[v])
-                        contacts.append(num)
-                        pass
-                    contacts = list(set(contacts))
-                    for z in range(len(contacts)):
-                        arg = contacts[z].split('|')
-                        userList.append(arg[0])
-                        timelist.append(arg[1])
-                    uL = list(set(userList))
-                    for ll in range(len(uL)):
-                        try:
-                            getIndexUser = userList.index(uL[ll])
-                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
-                            recheckData.append(userList[getIndexUser])
-                        except IndexError:
-                            conName.append('nones')
-                            pass
-                    contactId = kr.getContacts(recheckData)
-                    for v in range(len(recheckData)):
-                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
-                        pass
-                    if len(dataResult) > 0:
-                        tukang = "=READ LIST=\n :"
-                        grp = '\n : '.join(str(f) for f in dataResult)
-                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
-                        kr.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
-                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                        kr.sendText(msg.to, "Auto Checkpoint")                        
-                    else:
-                        kr.sendText(msg.to, "Belum Ada Viewers")
-                    print "Viewseen"
-
-            elif msg.text in ["kez6:setpoint on"]:
-                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                ks.sendText(msg.to, "Checkpoint Checked")
-                print "Setview"
-
-            elif msg.text in ["kez6:viewseen"]:
-	        lurkGroup = ""
-	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
-                with open('dataSeen/'+msg.to+'.txt','r') as rr:
-                    contactArr = rr.readlines()
-                    for v in xrange(len(contactArr) -1,0,-1):
-                        num = re.sub(r'\n', "", contactArr[v])
-                        contacts.append(num)
-                        pass
-                    contacts = list(set(contacts))
-                    for z in range(len(contacts)):
-                        arg = contacts[z].split('|')
-                        userList.append(arg[0])
-                        timelist.append(arg[1])
-                    uL = list(set(userList))
-                    for ll in range(len(uL)):
-                        try:
-                            getIndexUser = userList.index(uL[ll])
-                            timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
-                            recheckData.append(userList[getIndexUser])
-                        except IndexError:
-                            conName.append('nones')
-                            pass
-                    contactId = ks.getContacts(recheckData)
-                    for v in range(len(recheckData)):
-                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
-                        pass
-                    if len(dataResult) > 0:
-                        tukang = "=READ LIST=\n :"
-                        grp = '\n : '.join(str(f) for f in dataResult)
-                        total = '\n\n*Total %i Viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S')) + ""
-                        ks.sendText(msg.to, "%s %s %s" % (tukang, grp, total))
-                        subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
-                        ks.sendText(msg.to, "Auto Checkpoint")                        
-                    else:
-                        ks.sendText(msg.to, "Belum Ada Viewers")
-                    print "Viewseen"
-
 	    elif "Kick " in msg.text:
 		if msg.from_ in admin:	        
 		    if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -2908,6 +2760,8 @@ def bot(op):
                 kc.findAndAddContactsByMid(midd)
                 kr.findAndAddContactsByMid(midd)
                 ks.findAndAddContactsByMid(midd)
+                kb.findAndAddContactsByMid(midd)
+                kj.findAndAddContactsByMid(midd)
                 random.choice(KAC).inviteIntoGroup(msg.to,[midd])
 
             elif "Invite creator" in msg.text:
@@ -2940,23 +2794,47 @@ def bot(op):
                     cl.rejectGroupInvitation(i)
                 cl.sendText(msg.to,"All invitations have been refused")
 
-            elif msg.text in ["ngeline:cancel"]:
+            elif msg.text in ["kez2:cancel"]:
                 gid = ki.getGroupIdsInvited()
                 for i in gid:
                     ki.rejectGroupInvitation(i)
                 ki.sendText(msg.to,"All invitations have been refused")
                 
-            elif msg.text in ["ngelina:cancel"]:
+            elif msg.text in ["kez3:cancel"]:
                 gid = kk.getGroupIdsInvited()
                 for i in gid:
                     kk.rejectGroupInvitation(i)
                 kk.sendText(msg.to,"All invitations have been refused")     
                 
-            elif msg.text in ["mpuy:cancel"]:
+            elif msg.text in ["kez4:cancel"]:
                 gid = kc.getGroupIdsInvited()
                 for i in gid:
                     kc.rejectGroupInvitation(i)
                 kc.sendText(msg.to,"All invitations have been refused")                                
+                
+            elif msg.text in ["kez5:cancel"]:
+                gid = kr.getGroupIdsInvited()
+                for i in gid:
+                    kr.rejectGroupInvitation(i)
+                kr.sendText(msg.to,"All invitations have been refused")                                
+                
+            elif msg.text in ["kez6:cancel"]:
+                gid = ks.getGroupIdsInvited()
+                for i in gid:
+                    ks.rejectGroupInvitation(i)
+                ks.sendText(msg.to,"All invitations have been refused")                                                
+
+            elif msg.text in ["kez7:cancel"]:
+                gid = kb.getGroupIdsInvited()
+                for i in gid:
+                    kb.rejectGroupInvitation(i)
+                kb.sendText(msg.to,"All invitations have been refused")                                
+
+            elif msg.text in ["kez8:cancel"]:
+                gid = kj.getGroupIdsInvited()
+                for i in gid:
+                    kj.rejectGroupInvitation(i)
+                kj.sendText(msg.to,"All invitations have been refused")                                
 
             elif msg.text in ["Gurl"]:
                 if msg.toType == 2:
@@ -2990,11 +2868,15 @@ def bot(op):
                     time.sleep(0.2)
                     ks.acceptGroupInvitationByTicket(msg.to,Ticket)
                     time.sleep(0.2)
+                    kb.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    time.sleep(0.2)
+                    kj.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    time.sleep(0.2)
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = True
-                    ks.updateGroup(G)
+                    kj.updateGroup(G)
                     G.preventJoinByTicket(G)
-                    ks.updateGroup(G)
+                    kj.updateGroup(G)
 		else:
 		    cl.sendText(msg.to,"Access Denied For You im Sorry")
 
@@ -3066,6 +2948,34 @@ def bot(op):
                     G.preventJoinByTicket = True
                     ks.updateGroup(G)
 		else:
+		    cl.sendText(msg.to,"Access Denied For You im Sorry")        		    
+		    
+            elif msg.text in ["kez7:join"]:
+		if msg.from_ in admin:
+                    X = cl.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    invsend = 0
+                    Ti = cl.reissueGroupTicket(msg.to)
+                    kb.acceptGroupInvitationByTicket(msg.to,Ti)
+                    G = kb.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    kb.updateGroup(G)
+		else:
+		    cl.sendText(msg.to,"Access Denied For You im Sorry")        		    
+		    
+            elif msg.text in ["kez8:join"]:
+		if msg.from_ in admin:
+                    X = cl.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    invsend = 0
+                    Ti = cl.reissueGroupTicket(msg.to)
+                    kj.acceptGroupInvitationByTicket(msg.to,Ti)
+                    G = kj.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    kj.updateGroup(G)
+		else:
 		    cl.sendText(msg.to,"Access Denied For You im Sorry")        		    		    
         
             elif msg.text in ["timeline"]:
@@ -3104,10 +3014,24 @@ def bot(op):
                     ks.leaveGroup(msg.to)
               else:
 		          cl.sendText(msg.to,"Autoleave nya nonaktif")                                 		          		          
+		          
+            elif msg.text in ["kez7:bye"]:
+              if wait["Leave"] == True:		    
+                    kb.leaveGroup(msg.to)
+              else:
+		          cl.sendText(msg.to,"Autoleave nya nonaktif")                                 		          		          
+		          
+            elif msg.text in ["kez8:bye"]:
+              if wait["Leave"] == True:		    
+                    kj.leaveGroup(msg.to)
+              else:
+		          cl.sendText(msg.to,"Autoleave nya nonaktif")                                 		          		          		          
 
             elif msg.text in ["bye all","kez:pulang"]:
               if wait["Leave"] == True:
                     cl.sendText(msg.to,"Jahat :(")
+                    kj.leaveGroup(msg.to)
+                    kb.leaveGroup(msg.to)
                     ks.leaveGroup(msg.to)
                     kr.leaveGroup(msg.to)
                     kc.leaveGroup(msg.to)
@@ -3793,6 +3717,8 @@ def bot(op):
                         kc.updateProfile(profile)
                         kr.updateProfile(profile)
                         ks.updateProfile(profile)
+                        kb.updateProfile(profile)
+                        kj.updateProfile(profile)
                         cl.sendText(msg.to,"All Done")
                         
             elif "/bio " in msg.text:
@@ -3843,6 +3769,22 @@ def bot(op):
                         ks.updateProfile(profile)
                         ks.sendText(msg.to,"Done")                        
                         
+            elif "/bio7 " in msg.text:
+                    string = msg.text.replace("/bio7 ","")
+                    if len(string.decode('utf-8')) <= 500:
+                        profile = kb.getProfile()
+                        profile.statusMessage = string
+                        kb.updateProfile(profile)
+                        kb.sendText(msg.to,"Done")                        
+                        
+            elif "/bio8 " in msg.text:
+                    string = msg.text.replace("/bio8 ","")
+                    if len(string.decode('utf-8')) <= 500:
+                        profile = kj.getProfile()
+                        profile.statusMessage = string
+                        kj.updateProfile(profile)
+                        kj.sendText(msg.to,"Done")                                                
+                        
             elif "/cnall" in msg.text:
 		if msg.from_ in Creator:
                     string = msg.text.replace("/cnall")
@@ -3860,6 +3802,8 @@ def bot(op):
                         kc.updateProfile(profile)
                         kr.updateProfile(profile)
                         ks.updateProfile(profile)
+                        kb.updateProfile(profile)
+                        kj.updateProfile(profile)
                         cl.sendText(msg.to,"Done")
 
             elif "/cn1" in msg.text:
@@ -3915,6 +3859,24 @@ def bot(op):
                         profile.displayName = string
                         ks.updateProfile(profile)
                         ks.sendText(msg.to,"Done")                           
+                        
+            elif "/cn7" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cn7")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = kb.getProfile()
+                        profile.displayName = string
+                        kb.updateProfile(profile)
+                        kb.sendText(msg.to,"Done")                           
+                        
+            elif "/cn8" in msg.text:
+		if msg.from_ in Creator:
+                    string = msg.text.replace("/cn8")
+                    if len(string.decode('utf-8')) <= 5000:
+                        profile = kj.getProfile()
+                        profile.displayName = string
+                        kj.updateProfile(profile)
+                        kj.sendText(msg.to,"Done")                                                   
                         
             elif "Ulti " in msg.text:
               if msg.from_ in Creator:
@@ -4618,6 +4580,8 @@ def bot(op):
                     gid = kc.getGroupIdsInvited()
                     gid = kr.getGroupIdsInvited()
                     gid = ks.getGroupIdsInvited()
+		    gid = kb.getGroupIdsInvited()
+		    gid = kj.getGroupIdsInvited()
                     _list = ""
                     for i in gid:
                         if i is not None:
@@ -4632,6 +4596,8 @@ def bot(op):
                             kc.acceptGroupInvitation(i)
                             kr.acceptGroupInvitation(i)
                             ks.acceptGroupInvitation(i)
+			    kb.acceptGroupInvitation(i)
+		            kj.acceptGroupInvitation(i)
                         else:
                             break
                     if gid is not None:
