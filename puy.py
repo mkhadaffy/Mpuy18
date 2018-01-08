@@ -228,7 +228,7 @@ Fmid = kb.getProfile().mid
 Gmid = kj.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid]
 Creator=["uac8e3eaf1eb2a55770bf10c3b2357c33"]
-admin=["uac8e3eaf1eb2a55770bf10c3b2357c33","u04420be1a19f11db8ef6a37a1520f426","u5a31c87ded167546e010a1b7edd36c72","u07457c501b91f911cb9fe553727dc78c","uc4f91334d9b4238ef79aa3f374bbf523","u95f5fcc0013c63589bd45685aeaeda24"]
+admin=["uac8e3eaf1eb2a55770bf10c3b2357c33","u04420be1a19f11db8ef6a37a1520f426","u5a31c87ded167546e010a1b7edd36c72","u07457c501b91f911cb9fe553727dc78c","uc4f91334d9b4238ef79aa3f374bbf523","u95f5fcc0013c63589bd45685aeaeda24","ucd7959b8a4caebb8c6727d1e7faa3b40","u090199c43e846b7d519c93cd31ced228","u1c852b3e0cfc1fa5d0ee0df22aefd13f"]
 
 contact = cl.getProfile()
 backup1 = cl.getProfile()
@@ -291,8 +291,8 @@ wait = {
     "LeaveRoom":True,
     "AutoJoin":True,
     "AutoJoinCancel":False,
-    "memberscancel":30,
-    "Members":10,
+    "memberscancel":3,
+    "Members":3,
     "AutoCancel":False,
     "AutoKick":False,
     'pap':{},
