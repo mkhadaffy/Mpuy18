@@ -493,10 +493,8 @@ class LINE:
 
       prof = self.getProfile()
 
-      print("===============[Chucky_Bot]================")
-      print("        Thanks for TCR and my friend")
-      print("===============[© By_Nadya]================")
-      print("mid -> " + prof.mid)
-      print("name -> " + prof.displayName)
-      print("authToken -> " + self.authToken)
+      print("===============[PUY]================")
+      print("Umid -> " + prof.mid)
+      print("Uname -> " + prof.displayName)
+      print("UauthToken -> " + self.authToken)
       print("cert -> " + self.cert if self.cert is not None else "")
