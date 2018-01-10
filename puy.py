@@ -2741,7 +2741,7 @@ def bot(op):
                 cl.sendText(msg.to,"Send Contact")
                 
             elif msg.text in ["like post"]:
-            if msg.from_ in admin:	    
+              if msg.from_ in admin:	    
                 wait["likeOn"] = True
                 cl.sendText(msg.to,"Shere Post nya yang mau di like")                
 
