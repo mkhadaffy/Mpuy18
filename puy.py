@@ -4586,12 +4586,11 @@ def bot(op):
 
 
             elif msg.text in ["Glist"]:
-                cl.sendText(msg.to, "Tunggu Sebentar. . .")                    
                 gid = cl.getGroupIdsJoined()
                 h = ""
                 for i in gid:
                     h += "*" + "%s\n" % (cl.getGroup(i).name +" ~> ["+str(len(cl.getGroup(i).members))+"]")
-                cl.sendText(msg.to,"-------------------------\n[*LIST GROUPS*]\n-------------------------\n" + h + "-------------------------" + "\n*Total Groups =" +" ["+str(len(gid))+"]\n-------------------------")
+                cl.sendText(msg.to,"+-------------------------\n[*LIST GROUPS*]\n-------------------------\n" + h + "-------------------------" + "\n*Total Groups =" +" ["+str(len(gid))+"]\n+-------------------------")
 
             elif msg.text in ["Glistmid"]:   
                 gruplist = cl.getGroupIdsJoined()
@@ -4603,8 +4602,6 @@ def bot(op):
                     num=(num+1)
                 msgs+="\n---------List GrupMid---------\n\nTotal Grup : %i" % len(kontak)
                 cl.sendText(msg.to, msgs)
-
-
 
             elif "Google: " in msg.text:
                     a = msg.text.replace("Google: ","")
